@@ -2,7 +2,7 @@ Staff Details Update Api
 -----
 
 ## Introduction
-This Api will update staff Id on two database tables.
+This Api will update staff Id on two database tables given the staff email address and new id.
 
 
 
@@ -20,7 +20,6 @@ You can download and install the dependencies mentioned above using `pip` as:
 ```
 pip install virtualenv
 pip install SQLAlchemy
-pip install postgres
 pip install Flask
 pip install Flask-Migrate
 ```
