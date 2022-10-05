@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Staff Update Form</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+    integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+  
+
+    h1 {
+      margin: 0 0 20px;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-weight: 400;
+      color: #1c87c9;
+    }
+
+    p {
+      margin: 0 0 5px;
+    }
+
+    .main-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #1c87c9;
+    }
+
+    form {
+      padding: 25px;
+      margin: 25px;
+      box-shadow: 0 2px 5px #f5f5f5;
+      background: #f5f5f5;
+      border-radius: 5px;
+
+    }
+
+    .fas {
+      margin: 25px 10px 0;
+      font-size: 72px;
+      color: #fff;
+    }
+
+    .fa-envelope {
+      transform: rotate(-20deg);
+    }
+
+    .fa-at,
+    .fa-mail-bulk {
+      transform: rotate(10deg);
+    }
+
+    .form-control,
+    textarea {
+      width: calc(100% - 18px);
+      padding: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #1c87c9;
+      outline: none;
+      font-family: Baskerville;
+    }
+
+    input::placeholder {
+      color: #666;
+    }
+
+    label {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    button {
+      width: 30%;
+      padding: 10px;
+      border: none;
+      background: #1c87c9;
+      font-size: 40px;
+      font-weight: 400;
+      color: #fff;
+      text-align: center;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    button:hover {
+      background: #2371a0;
+    }
+
+    @media (min-width: 568px) {
+      .main-block {
+        flex-direction: row;
+      }
+
+      .left-part,
+      form {
+        width: 50%;
+      }
+
+      .fa-envelope {
+        margin-top: 0;
+        margin-left: 20%;
+      }
+
+      .fa-at {
+        margin-top: -10%;
+        margin-left: 65%;
+      }
+
+      .fa-mail-bulk {
+        margin-top: 2%;
+        margin-left: 28%;
+      }
+    }
+  </style>
+</head>
+
+<body style="background-image:url(/static/img/exotic.jpg)";>
+
+  <div class="container">
+    <div class="row ">
+      <div class="col-sm-12">
+        
+        <form action="http://localhost:5000/staff" method="post" class="mx-auto">
+          <h1 class="text-center">Update Staff Details</h1>
+          <div class="mb-3 mt-3">
+            <label for="Staff Name">Staff Name:</label>
+            <input class="form-control" type="text" name="name" placeholder="Enter Staff name">
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="email">Email:</label>
+            <input class="form-control" type="email" name="email" placeholder="Enter Email">
+          </div>
+          <div class="mb-3 mt-3">
+            <label for="Staff Id">New Staff ID:</label>
+            <input class="form-control" type="text" name="id" placeholder="Enter Staff ID">
+          </div>
+         
+          <div class="text-center">
+          <button type="submit" class="btn btn-primary me-4" formaction="http://localhost:5000/staff">Update</button>
+          <button type="submit" class="btn btn-primary " formaction="http://localhost:5000/search">Search</button>
+          </div>
+        </form>
+        <div>
+          <div>
+
+
+
+          </div>
+
+          <div class="container-sm bg-primary">
+            <div class="row ">
+              <div class="col-sm-8 mx-auto">
+                
+                
+
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul>
+                  {% for message in messages %}
+                  <h4 class="text-center">{{ message }}</h4>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+                {% endwith %}
+              </div>
+            </div>
+
+          </div>
+
+</body>
+
+</html>
